@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* CSS Kustom */
+        .input-field {
+            margin-bottom: 20px; /* Jarak antara input */
+        }
+
+        .container {
+            background-color: #ffffff; /* Warna latar belakang kontainer */
+            border-radius: 8px; /* Sudut melengkung */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan */
+            padding: 20px; /* Padding di dalam kontainer */
+        }
+
+        .submit-button {
+            margin-top: 20px; /* Jarak atas untuk tombol submit */
+            display: inline-block; /* Agar tombol berada dalam satu baris */
+            padding: 10px 20px; /* Padding untuk tombol */
+            background-color: #007bff; /* Warna latar belakang tombol */
+            color: #ffffff; /* Warna teks tombol */
+            border-radius: 5px; /* Sudut melengkung tombol */
+            text-align: center; /* Agar teks berada di tengah */
+            cursor: pointer; /* Mengubah cursor saat hover */
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3; /* Warna saat hover */
+        }
+    </style>
+</head>
+    
+<body>
+    <div class="max-w-[90rem] mx-auto bg-sky-500 p-4"> <!-- Menambahkan padding -->
+        <p class="block text-[2.50rem] text-black text-center my-4">FORM PENDAFTARAN</p>
+        
+        <div class="container">
+            <div class="input-field">
+                <p class="block text-3xl text-black">Nama</p>
+                <input type="text" id="nama" class="border rounded p-2 w-full" placeholder="Masukkan nama Anda" />
+            </div>
+
+            <div class="input-field">
+                <p class="block text-3xl text-black">Alamat</p>
+                <input type="text" id="alamat" class="border rounded p-2 w-full" placeholder="Masukkan alamat Anda" />
+            </div>
+
+            <div class="input-field">
+                <p class="block text-3xl text-black">Email</p>
+                <input type="email" id="email" class="border rounded p-2 w-full" placeholder="Masukkan email Anda" />
+            </div>
+
+            <p class="submit-button text-center" onclick="submitForm()">SUBMIT</p> <!-- Mengubah elemen submit -->
+        </div>
+    </div>
+
+    <script>
+        function submitForm() {
+            // Ambil nilai dari input
+            const nama = document.getElementById('nama').value;
+            const alamat = document.getElementById('alamat').value;
+            const email = document.getElementById('email').value;
+
+            // Cek apakah ada input yang kosong
+            if (nama === '' || alamat === '' || email === '') {
+                alert('Harap isi semua kolom!');
+            } else {
+                alert('Form berhasil disubmit!');
+                // Di sini Anda dapat menambahkan kode untuk memproses data lebih lanjut
+            }
+        }
+    </script>
+</body>
+
+</html>
